@@ -9,12 +9,21 @@ class Formatter {
   static sanitize(string){ //Function to remove all non-alphanumeric characters, except for "-", " ' ", and " "
     let stringArr = string.split('');
     console.log(stringArr);
+
+    for(let character = 0; character < stringArr.length; character++){
+      if(!(stringArr[character] === '-' || 
+      stringArr[character] === '\'' || 
+      stringArr[character] === ' ')){
+        stringArr.splice(character, 1);
+      }
+      string = stringArr.join('');
+      console.log(string);
+    }
   }
 
-  static titleize(string){ //Function to capitalize the first character of most words
-    console.log(string);
+  static titleize(string){ //Function to capitalize the first character of most words.
+    // console.log(string);
     let stringArr = string.split(' ');
-    console.log(stringArr);
 
     //Always capitalize first letter of first word
     let stringFragArr = stringArr[0].split(''); //Split first word into letters.
@@ -29,11 +38,11 @@ class Formatter {
         stringFragArr = stringArr[word].split('');
         stringFragArr[0] = stringArr[word].charAt(0).toUpperCase();
         stringArr[word] = stringFragArr.join('');
-        console.log(stringArr[word]);
+        // console.log(stringArr[word]);
       }
     }
     string = stringArr.join(' ');
-    console.log(string);
+    // console.log(string);
     return string;
   }
 }
