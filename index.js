@@ -8,7 +8,6 @@ class Formatter {
 
   static sanitize(string){ //Function to remove all non-alphanumeric characters, except for "-", " ' ", and " "
         string = string.replace( /[^A-Za-z0-9 '-]/g, '' ); //Replace all but these characters (using regex).
-      console.log(string);
       return string;
   }
 
